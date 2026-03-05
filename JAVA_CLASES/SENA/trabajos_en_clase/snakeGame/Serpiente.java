@@ -1,24 +1,31 @@
 package snakeGame;
+
 import javax.swing.*;
 
 public class Serpiente extends JFrame {
-    
-    public Serpiente() {
-        setTitle("Snake - Cublebrita");
+
+    public Serpiente()
+    {
+        setTitle("Snake - Cukebrita");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         
-        //AÑADIR PANEL DE JUEGO
+
+        // añadir panel de juego 
+        /********************************************************* */
         add(new GamePanel());
-        
-        pack();
-        setLocationRelativeTo(null);
+        pack();                         // ajusta el tamaño de la ventana al del panel 
+        setLocationRelativeTo(null);    
         setVisible(true);
+        /********************************************************* */
+
+
     }
 
-    public static void main(String[] args){
+    public static void main (String[] args ){
+        
         new Serpiente();
+
     }
     
 }
-
