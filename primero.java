@@ -4,45 +4,50 @@ public class primero {
 
     // ─────────────────────────────────────────
     // FUNCIÓN 1: Calcula el factorial de n
-    // Ejemplo: factorial(3) → 6
     // ─────────────────────────────────────────
     public static double factorial(int n) {
-        double fact = 1;
+        double resultado = 1;
         for (int i = 1; i <= n; i++) {
-            fact *= i;
+            resultado = resultado * i;  // 1 × 1 × 2 × 3...
         }
-        return fact;
+        return resultado;
     }
 
     // ─────────────────────────────────────────
-    // FUNCIÓN 2: Calcula cada término de la serie
-    // Fórmula: signo × x^n / n!
-    // Ejemplo: termino(3, 2) → +9/2 = 4.5
+    // FUNCIÓN 2: Calcula un término de la serie
     // ─────────────────────────────────────────
     public static double termino(int x, int n) {
-        int signo = (n % 2 == 0) ? 1 : -1;
-        return signo * Math.pow(x, n) / factorial(n);
+        double potencia = Math.pow(x, n);   // x elevado a n
+        double fact     = factorial(n);     // n!
+        int    signo    = 1;                // positivo por defecto
+
+        if (n % 2 != 0) {                  // si n es impar → negativo
+            signo = -1;
+        }
+
+        return signo * potencia / fact;
     }
 
     // ─────────────────────────────────────────
-    // FUNCIÓN 3: Calcula f(x) recorriendo la serie
-    // El for va de n=0 hasta n=x (igual que tu código)
+    // FUNCIÓN 3: Suma todos los términos
     // ─────────────────────────────────────────
     public static double calcularF(int x) {
-        double rta = 0;
+        double suma = 0;
+
         for (int n = 0; n <= x; n++) {
-            rta += termino(x, n);
+            suma = suma + termino(x, n);   // acumula cada término
         }
-        return rta;
+
+        return suma;
     }
 
     // ─────────────────────────────────────────
-    // MAIN: Lee x e imprime el resultado
+    // MAIN: Lee x, llama calcularF, imprime
     // ─────────────────────────────────────────
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
 
-        System.out.println("Ingrese el valor de x");
+        System.out.println("Ingrese el valor de x: ");
         int x = leer.nextInt();
 
         double resultado = calcularF(x);
