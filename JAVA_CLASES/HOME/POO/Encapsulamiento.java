@@ -1,3 +1,5 @@
+package JAVA_CLASES.HOME.POO;
+
 class Persona {
     // ATRIBUTOS
     private String nombre;
