@@ -1,0 +1,23 @@
+ /*
+        🟢 Proyecto Fácil — Sistema de Mascotas
+        Crea un sistema para registrar mascotas de una veterinaria.
+        -Requisitos:
+         * Clase Mascota:
+        
+         * Atributos privados: nombre (String), especie (String), edad (int), peso
+         * (double)
+         * Constructor con todos los atributos
+         * Getters para todos los atributos
+         * Setter solo para peso — con validación: el peso debe ser mayor a 0
+         * Método mostrarInfo() que imprima todos los datos de la mascota
+        
+         * En el main:
+        
+         * Crea un ArrayList<Mascota> con al menos 4 mascotas
+         * Recorre la lista e imprime la info de cada una
+         * Intenta cambiar el peso de una mascota con un valor inválido (negativo) y
+         * verifica que la validación funciona
+         * 
+         * Conceptos que practica: clases, constructor, encapsulamiento, getters,
+         * setters, ArrayList, foreach.
+*/

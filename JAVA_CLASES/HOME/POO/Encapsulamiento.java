@@ -1,4 +1,3 @@
-package JAVA_CLASES.HOME.POO;
 
 class Persona {
     // ATRIBUTOS
