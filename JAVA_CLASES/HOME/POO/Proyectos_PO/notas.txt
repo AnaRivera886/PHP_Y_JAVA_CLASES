@@ -21,3 +21,70 @@
          * Conceptos que practica: clases, constructor, encapsulamiento, getters,
          * setters, ArrayList, foreach.
 */
+
+🟡 Proyecto Medio — Sistema de Empleados
+Crea un sistema de empleados para una empresa.
+Clase abstracta Empleado:
+
+Atributos privados: nombre (String), id (int)
+Constructor con ambos atributos
+Getters para ambos
+Método abstracto calcularSalario() que devuelve double
+Método mostrarInfo() que imprima nombre, id y salario
+
+Clase EmpleadoTiempoCompleto que extiende Empleado:
+
+Atributo privado: salarioMensual (double)
+Constructor con nombre, id y salarioMensual
+Implementa calcularSalario() → devuelve salarioMensual
+
+Clase EmpleadoPorHoras que extiende Empleado:
+
+Atributos privados: horasTrabajadas (int) y valorHora (double)
+Constructor con nombre, id, horasTrabajadas y valorHora
+Implementa calcularSalario() → devuelve horasTrabajadas * valorHora
+
+En el main:
+
+Crea un ArrayList<Empleado> con al menos 2 empleados de cada tipo
+Recorre la lista y llama a mostrarInfo() de cada uno
+
+🔴 Proyecto Difícil — Sistema de Vehículos
+Crea un sistema para gestionar una flota de vehículos.
+Interfaz Mantenible:
+
+Método realizarMantenimiento() — imprime un mensaje de mantenimiento específico para cada vehículo
+
+Clase abstracta Vehiculo:
+
+Atributos privados: marca (String), modelo (String), anio (int), kilometraje (double)
+Constructor con todos los atributos
+Getters para todos
+Setter para kilometraje — validación: el nuevo kilometraje debe ser mayor al actual, no puede bajar
+Método abstracto calcularCostoOperacion() que devuelve double
+Método mostrarInfo() que imprima todos los datos y el costo de operación
+
+Clase VehiculoElectrico que extiende Vehiculo e implementa Mantenible:
+
+Atributo privado: capacidadBateria (double) — en kWh
+Atributo privado: costoPorKwh (double)
+Constructor con todos los atributos
+calcularCostoOperacion() → capacidadBateria * costoPorKwh
+realizarMantenimiento() → imprime "[marca] [modelo]: Revisando batería y sistemas eléctricos"
+
+Clase VehiculoGasolina que extiende Vehiculo e implementa Mantenible:
+
+Atributo privado: consumoPorKm (double) — litros por km
+Atributo privado: precioPorLitro (double)
+Constructor con todos los atributos
+calcularCostoOperacion() → consumoPorKm * precioPorLitro * kilometraje
+realizarMantenimiento() → imprime "[marca] [modelo]: Cambiando aceite y revisando motor"
+
+En el main:
+
+Crea un ArrayList<Vehiculo> con al menos 2 vehículos de cada tipo
+Recorre la lista y llama a mostrarInfo() de cada uno
+Intenta bajar el kilometraje de un vehículo y verifica la validación
+Recorre la lista y llama a realizarMantenimiento() — aquí necesitas un cast, investiga cómo funciona el cast en Java 😊
+
+💪 Este tiene un reto extra — el cast. Investígalo y si te trancas me preguntas.
